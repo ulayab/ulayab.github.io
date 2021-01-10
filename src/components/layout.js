@@ -1,13 +1,23 @@
 import React from "react"
+import styled from "styled-components"
+import Navbar from "./navbar"
 
 export default function Layout({children}) {
     return(
-        <div>
-            <div className="navbar" style={{ backgroundColor: 'lightblue', display: 'flex'}}>
-                <h1>site name</h1>
-                <p>navbar</p>
+        <Wrapper>
+            <div className="navbar">
+                <Navbar />                
             </div>
-            {children}
-        </div>
+            <div className="center-content">
+                {children}
+            </div>
+        </Wrapper>
     )
 }
+
+const Wrapper = styled.div`
+    & > .center-content {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+`
