@@ -19,7 +19,7 @@ module.exports = {
     logo: "",
   },
   plugins: [
-    `gatsby-transformer-remark`,
+    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {

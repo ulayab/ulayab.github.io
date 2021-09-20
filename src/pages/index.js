@@ -6,8 +6,8 @@ export default function Home({data}) {
   console.log('data: ',data)
   return (
     <Layout>
-      <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
+      <h4>{data.allMdx.totalCount} Posts</h4>
+        {data.allMdx.edges.map(({ node }) => (
           <div key={node.id}>
             <Link to={`${node.fields.slug}`}>
               {node.frontmatter.title}{" "}
@@ -24,7 +24,7 @@ export default function Home({data}) {
 
 export const query = graphql`
 query MyQuery {
-  allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+  allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
     edges {
       node {
         id
@@ -36,7 +36,7 @@ query MyQuery {
           slug
         }
         excerpt
-        html
+        body
         timeToRead
       }
     }
