@@ -6,6 +6,10 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: "My Homepage",
+    description: "This is where I write my thoughts.",
+  },
   plugins: [
     `gatsby-transformer-remark`,
     {
