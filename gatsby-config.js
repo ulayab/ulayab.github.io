@@ -7,8 +7,16 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "My Homepage",
+    title: "My Zoo",
     description: "This is where I write my thoughts.",
+    siteUrl: "http://google.com",
+    headline: "",
+    description: "",
+    image: "",
+    video: "",
+    twitter: "",
+    name: "",
+    logo: "",
   },
   plugins: [
     `gatsby-transformer-remark`,

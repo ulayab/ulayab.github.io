@@ -1,12 +1,15 @@
 import React from "react"
 import styled from "styled-components"
 import {Link} from "gatsby"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 export default function Navbar() {
+    const { title } = useSiteMetadata()
+
     return (
         <Wrapper>
             <NavItem to="/">
-                <h1>Site name</h1>
+                <h1>Welcome to {title}</h1>
             </NavItem>
             <div className="padding" />
             <NavItem to="/">Blog</NavItem>
