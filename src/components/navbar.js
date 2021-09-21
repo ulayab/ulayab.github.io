@@ -20,10 +20,12 @@ export default function Navbar() {
 }
 
 const Wrapper = styled.div`
+    height: var(--navbarHeight);
     display: flex;
     align-items: center;
     max-width: 900px;
     margin: 0 auto;
+
     & > h1 {}
     & > .padding{
         flex: 1;

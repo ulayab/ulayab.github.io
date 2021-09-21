@@ -6,14 +6,11 @@ const typography = new Typography({
   headerFontFamily: ['Apple SD Gothic Neo', 'Nanum Gothic'],
   bodyFontFamily: ['Apple SD Gothic Neo', 'Nanum Gothic'],
 	overrideStyles: () => ({
+		// move global styling to layout.js
 		h1: {
-			color: '#24292e',
 			margin: 0,
 			// fontFamily: ['Montserrat', 'sans-serif'].join(','),
 		},
-		a: {
-			color: '#6c7a88',
-		}
 	})
 });
 

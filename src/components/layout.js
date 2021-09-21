@@ -16,8 +16,15 @@ export default function Layout({children}) {
 }
 
 const Wrapper = styled.div`
+    --contentMaxWidth: 900px;
+    --navbarHeight: 60px;
+    --primaryColor: #24292e;
+
+    a {
+        color: #6c7a88;
+    }
     & > .center-content {
-        max-width: 900px;
+        max-width: var(--contentMaxWidth);
         margin: 0 auto;
     }
 `
