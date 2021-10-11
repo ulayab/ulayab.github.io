@@ -9,6 +9,17 @@ export default function Navbar() {
     return (
         <Wrapper>
             <NavItem to="/">
+                <img
+                src={require(`../images/profile.jpg`)}
+                alt="title profile picture"
+                style={{
+                    width: 50,
+                    height: 50,
+                    borderRadius: 25,
+                    margin: 0,
+                    marginRight: 10
+                }}
+                />
                 <h1>Welcome to {title}</h1>
             </NavItem>
             <div className="padding" />
@@ -33,9 +44,12 @@ const Wrapper = styled.div`
 `
 
 const NavItem = styled(Link)`
+    display: flex;
+    align-items: center;
     margin-left: 10px;
     text-decoration: none;
     :first-child {
         margin: 0;
     }
+
 `
