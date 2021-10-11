@@ -38,5 +38,6 @@ const Wrapper = styled.div`
 
     & .row {
         display: flex;
+        align-items: center;
     }
 `
