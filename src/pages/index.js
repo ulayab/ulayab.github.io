@@ -8,13 +8,13 @@ export default function Home({data}) {
     <Layout>
       <h4>{data.allMdx.totalCount} Posts</h4>
         {data.allMdx.edges.map(({ node }) => (
-          <div key={node.id}>
-            <Link to={`${node.fields.slug}`}>
+          <div className="post-item" key={node.id}>
+            <Link className="post-title" to={`${node.fields.slug}`}>
               {node.frontmatter.title}{" "}
-              <span>
-                — {node.frontmatter.date}
-              </span>
             </Link>
+              <span className="date">
+               {node.frontmatter.date}
+              </span>
             <p>{node.excerpt}</p>
           </div>
         ))}
