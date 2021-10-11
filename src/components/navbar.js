@@ -20,7 +20,7 @@ export default function Navbar() {
                     marginRight: 10
                 }}
                 />
-                <h1>Welcome to {title}</h1>
+                <h2>{title}</h2>
             </NavItem>
             <div className="padding" />
             <NavItem to="/">Blog</NavItem>
@@ -37,7 +37,6 @@ const Wrapper = styled.div`
     max-width: 900px;
     margin: 0 auto;
 
-    & > h1 {}
     & > .padding{
         flex: 1;
     }
@@ -50,6 +49,9 @@ const NavItem = styled(Link)`
     text-decoration: none;
     :first-child {
         margin: 0;
+    }
+    & h2 {
+        margin: 0px;
     }
 
 `

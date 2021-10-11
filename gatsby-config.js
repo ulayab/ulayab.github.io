@@ -7,7 +7,7 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "My Zoo",
+    title: "Dev.zookeeper",
     description: "This is where I write my thoughts.",
     siteUrl: "http://google.com",
     headline: "",

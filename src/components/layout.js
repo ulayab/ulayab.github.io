@@ -9,7 +9,7 @@ export default function Layout({children}) {
             <div className="navbar">
                 <Navbar />                
             </div>
-            <div className="center-content row">
+            <div className="center-content row" style={{marginTop: 30}}>
                 <Profile/>
                 <div style={{flexBasis: 140}}/>
                 <div>{children}</div>
@@ -38,6 +38,24 @@ const Wrapper = styled.div`
 
     & .row {
         display: flex;
-        align-items: center;
+        /* align-items: center; */
+    }
+
+    & .post-item {
+        margin-bottom: 50px;
+    }
+
+    & .post-title {
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.1;
+        text-decoration: none;
+        color: #48525c;
+    }
+
+    & .date {
+        color: #949ca5;
+        font-size: 14px;
     }
 `
