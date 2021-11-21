@@ -10,7 +10,7 @@ let config = {
 	name: 'Ula Chao',
 	company: '',
 	location: 'Taiwan',
-	email: 'gary0626@gmail.com',
+	email: 'ula.ccy@gmail.com',
 	website: '',
 	linkedin: '',
 	facebook: '',
