@@ -3,7 +3,7 @@ import styled from "styled-components"
 import {Link} from "gatsby"
 import { FontAwesomeIcon as Fa } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faAt, faMapMarkerAlt, faLink, faAddressCard, faRss } from '@fortawesome/free-solid-svg-icons'
-import { faFacebook, faInstagram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faLinkedin, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 let config = {
 	comment: '',
@@ -15,10 +15,12 @@ let config = {
 	linkedin: '',
 	facebook: '',
 	instagram: 'http://instagram.com/ulayab',
-	github: 'https://github.com/ulayab'
+	github: 'https://github.com/ulayab',
+	twitter: 'https://twitter.com/ulayabi',
+	linkedin: 'https://www.linkedin.com/in/ula-chao-b383a1162',
 }
 export default function Profile() {
-	const { comment, name, company, location, email, website, linkedin, facebook, instagram, github } = config;
+	const { comment, name, company, location, email, website, linkedin, facebook, instagram, github, twitter } = config;
 
 	return(
 		<Wrapper>
@@ -99,6 +101,11 @@ export default function Profile() {
 							<Fa icon={faGithub} className="github" />
 						</a>
 					)}
+					{!twitter ? null : (
+						<a href={twitter} target="_blank" rel="noopener noreferrer">
+							<Fa icon={faTwitter} className="twitter" />
+						</a>
+					)}
 				</div>
 			</div>
 		</Wrapper>
@@ -174,7 +181,6 @@ const Wrapper = styled.div`
       .linkedin,
       .facebook,
       .instagram,
-      .github,
       .rss {
         width: 1.2rem;
         transition: color 0.3s;
@@ -195,6 +201,9 @@ const Wrapper = styled.div`
         }
         .github {
           color: #999 !important;
+        }
+				.twitter {
+          color: #1DA1F2 !important;
         }
       }
     }
