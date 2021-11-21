@@ -6,13 +6,12 @@ import { faUserCircle, faAt, faMapMarkerAlt, faLink, faAddressCard, faRss } from
 import { faFacebook, faInstagram, faLinkedin, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 let config = {
-	comment: '',
+	comment: 'Frontend Developer',
 	name: 'Ula Chao',
 	company: '',
 	location: 'Taiwan',
 	email: 'ula.ccy@gmail.com',
 	website: '',
-	linkedin: '',
 	facebook: '',
 	instagram: 'http://instagram.com/ulayab',
 	github: 'https://github.com/ulayab',
