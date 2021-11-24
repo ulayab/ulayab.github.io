@@ -1,20 +1,36 @@
 import React from "react"
 import styled from "styled-components"
+import { MDXProvider } from "@mdx-js/react"
 import Navbar from "./navbar"
 import Profile from "./profile"
+// import * as DesignSystem from "../utils/mdxDesignSystem"
 
 export default function Layout({children}) {
     return(
-        <Wrapper>
-            <div className="navbar">
-                <Navbar />                
-            </div>
-            <div className="center-content row" style={{marginTop: 30}}>
-                <Profile/>
-                <div style={{flexBasis: 140}}/>
-                <div>{children}</div>
-            </div>
-        </Wrapper>
+        <MDXProvider
+            components={{
+                // Map HTML element tag to React component
+                // h1: DesignSystem.H1,
+                // h2: DesignSystem.H2,
+                // h3: DesignSystem.H3,
+                // Or define component inline
+                // element names src: https://mdxjs.com/table-of-components/
+                // pre: props => <pre {...props} style={{backgroundColor: 'blue', color: 'yellow'}}/>, 
+                // code: props => <code {...props} style={{backgroundColor: 'red', color: 'pink'}}/>,
+                // p: props => <p {...props} style={{ color: "rebeccapurple" }} />,
+            }}
+            >
+            <Wrapper>
+                <div className="navbar">
+                    <Navbar />                
+                </div>
+                <div className="center-content row" style={{marginTop: 30}}>
+                    <Profile/>
+                    <div style={{flexBasis: 140}}/>
+                    <div>{children}</div>
+                </div>
+            </Wrapper>
+        </MDXProvider>
     )
 }
 
