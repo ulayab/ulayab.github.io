@@ -29,8 +29,7 @@
     "react-dom": "^16.12.0",
     "react-typography": "^0.16.19",
     "styled-components": "^5.2.1",
-    "typography": "^0.16.19",
-    "typography-theme-fairy-gates": "^0.16.19"
+    "typography": "^0.16.19"
   },
   "devDependencies": {
     "gh-pages": "^3.2.3",
