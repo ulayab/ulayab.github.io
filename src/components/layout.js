@@ -4,6 +4,7 @@ import { MDXProvider } from "@mdx-js/react"
 import Navbar from "./navbar"
 import Profile from "./profile"
 // import * as DesignSystem from "../utils/mdxDesignSystem"
+import Highlight, { defaultProps } from "prism-react-renderer";
 
 export default function Layout({children}) {
     return(
@@ -18,6 +19,20 @@ export default function Layout({children}) {
                 // pre: props => <pre {...props} style={{backgroundColor: 'blue', color: 'yellow'}}/>, 
                 // code: props => <code {...props} style={{backgroundColor: 'red', color: 'pink'}}/>,
                 // p: props => <p {...props} style={{ color: "rebeccapurple" }} />,
+                pre: props => <Highlight {...defaultProps} code={props.children.props.children} language="jsx">
+                {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                  <pre className={className} style={style}>
+                      {console.log('props----',props)}
+                    {tokens.map((line, i) => (
+                      <div {...getLineProps({ line, key: i })}>
+                        {line.map((token, key) => (
+                          <span {...getTokenProps({ token, key })} />
+                        ))}
+                      </div>
+                    ))}
+                  </pre>
+                )}
+              </Highlight>
             }}
             >
             <Wrapper>
