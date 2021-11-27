@@ -26,11 +26,14 @@ export default function Layout({children}) {
                   <pre className={className} style={style}>
                       {console.log('props----',props)}
                     {tokens.map((line, i) => (
-                      <div {...getLineProps({ line, key: i })}>
-                        {line.map((token, key) => (
-                          <span {...getTokenProps({ token, key })} />
-                        ))}
-                      </div>
+                      <Line key={i} {...getLineProps({ line, key: i })}>
+                        <LineNo>{i + 1}</LineNo>
+                        <LineContent>
+                            {line.map((token, key) => (
+                            <span key={key} {...getTokenProps({ token, key })} />
+                            ))}
+                        </LineContent>
+                        </Line>
                     ))}
                   </pre>
                 )}
@@ -92,3 +95,19 @@ const Wrapper = styled.div`
         font-size: 14px;
     }
 `
+
+const Line = styled.div`
+  display: table-row;
+`;
+
+const LineNo = styled.span`
+  display: table-cell;
+  text-align: right;
+  padding-right: 1em;
+  user-select: none;
+  opacity: 0.5;
+`;
+
+const LineContent = styled.span`
+  display: table-cell;
+`;
