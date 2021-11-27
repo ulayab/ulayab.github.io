@@ -20,7 +20,7 @@ export default function Layout({children}) {
                 // element names src: https://mdxjs.com/table-of-components/
                 // pre: props => <pre {...props} style={{backgroundColor: 'blue', color: 'yellow'}}/>, 
                 // code: props => <code {...props} style={{backgroundColor: 'red', color: 'pink'}}/>,
-                // p: props => <p {...props} style={{ color: "rebeccapurple" }} />,
+                p: props => <p {...props} style={{ lineHeight: 2 }} />,
                 pre: props => <Highlight {...defaultProps} theme={duotoneLight} code={props.children.props.children} language="jsx">
                 {({ className, style, tokens, getLineProps, getTokenProps }) => (
                   <pre className={className} style={style}>
@@ -58,6 +58,10 @@ const Wrapper = styled.div`
     --contentMaxWidth: 900px;
     --navbarHeight: 60px;
     --primaryColor: #24292e;
+    --darkerGrey: #48525c;
+    --darkGrey: #949ca5;
+    --lightGrey: #afafaf;
+    --lighterGrey: #cfcfcf;
 
     a {
         color: #6c7a88;
@@ -87,12 +91,13 @@ const Wrapper = styled.div`
         font-weight: 700;
         line-height: 1.1;
         text-decoration: none;
-        color: #48525c;
+        color: var(--darkerGrey);
     }
 
     & .date {
-        color: #949ca5;
+        color: var(--darkGrey);
         font-size: 14px;
+        letter-spacing: 0.7px;
     }
 `
 
