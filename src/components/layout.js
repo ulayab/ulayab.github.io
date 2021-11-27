@@ -5,6 +5,8 @@ import Navbar from "./navbar"
 import Profile from "./profile"
 // import * as DesignSystem from "../utils/mdxDesignSystem"
 import Highlight, { defaultProps } from "prism-react-renderer";
+import github from 'prism-react-renderer/themes/github';
+import duotoneLight from 'prism-react-renderer/themes/duotoneLight';
 
 export default function Layout({children}) {
     return(
@@ -19,7 +21,7 @@ export default function Layout({children}) {
                 // pre: props => <pre {...props} style={{backgroundColor: 'blue', color: 'yellow'}}/>, 
                 // code: props => <code {...props} style={{backgroundColor: 'red', color: 'pink'}}/>,
                 // p: props => <p {...props} style={{ color: "rebeccapurple" }} />,
-                pre: props => <Highlight {...defaultProps} code={props.children.props.children} language="jsx">
+                pre: props => <Highlight {...defaultProps} theme={duotoneLight} code={props.children.props.children} language="jsx">
                 {({ className, style, tokens, getLineProps, getTokenProps }) => (
                   <pre className={className} style={style}>
                       {console.log('props----',props)}
