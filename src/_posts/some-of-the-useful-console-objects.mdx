@@ -1,0 +1,57 @@
+---
+title: "Some of the Useful Console Objects"
+date: "2021-02-27"
+tags: ["web-api"]
+---
+
+There are some widely-used / interesting methods of `console`  objects.
+
+First, we can console the console itself to see all the methods :P
+
+```jsx
+ console.log(console)
+```
+
+1. `console.log()`
+    1. substitutions (Chrome support)
+        1. `%o`  `%O`js object
+            
+            see more: [https://stackoverflow.com/questions/68449497/difference-between-o-and-o-in-console-log-javascript](https://stackoverflow.com/questions/68449497/difference-between-o-and-o-in-console-log-javascript) 
+            
+        2. `%s` string
+            
+            ```jsx
+            console.log("Hello %s, my name is %s", 'world', 'Mary',);
+            // "Hello world, my name is Mary."
+            ```
+            
+        3. `%c` css
+        
+        ```jsx
+        console.log("This is %cMy stylish message", "color: yellow; font-style: italic; background-color: blue;padding: 2px");
+        console.log('%c ', 'font-size:400px; background:url(https://pics.me.me/codeit-google-until-youfinda-stackoverflow-answerwith-code-to-copy-paste-34126823.png) no-repeat;');
+        ```
+        
+2. `console.info()`
+3. `console.dir(obj)` / `console.dirxml(obj)`
+    - dir() : see the type of the object
+    - dirxml(): see the content of the object
+4. `console.warn()`
+5. `console.error()`
+6. `console.group()` / `console.groupEnd()`
+7. `console.trace()`
+    - to trace the info of the source (ex. line number of local file)
+8. `console.table()` [https://developer.mozilla.org/zh-CN/docs/Web/API/Console/table](https://developer.mozilla.org/zh-CN/docs/Web/API/Console/table)
+    
+    ```jsx
+    // an array of strings
+    
+    console.table(["apples", "oranges", "bananas"]);
+    ```
+    
+
+### Sources
+
+- [https://developer.mozilla.org/zh-TW/docs/Web/API/Console](https://developer.mozilla.org/zh-TW/docs/Web/API/Console)
+- [https://stackoverflow.com/questions/68449497/difference-between-o-and-o-in-console-log-javascript](https://stackoverflow.com/questions/68449497/difference-between-o-and-o-in-console-log-javascript)
+- [https://developer.mozilla.org/zh-CN/docs/Web/API/Console/table](https://developer.mozilla.org/zh-CN/docs/Web/API/Console/table)
