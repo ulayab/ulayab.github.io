@@ -18,15 +18,14 @@ export default function Layout({children}) {
                 // h3: DesignSystem.H3,
                 // Or define component inline
                 // element names src: https://mdxjs.com/table-of-components/
-                // pre: props => <pre {...props} style={{backgroundColor: 'blue', color: 'yellow'}}/>, 
-                // code: props => <code {...props} style={{backgroundColor: 'red', color: 'pink'}}/>,
+                inlineCode: props =>
+                    <span style={{ backgroundColor: "#eee", color:'#d97796', padding: '2px 6px', marginRight:5, borderRadius: 5,fontWeight: '500', letterSpacing: 0.7 }} {...props} />,
                 p: props => <p {...props} style={{ lineHeight: 2 }} />,
                 pre: props => <Highlight {...defaultProps} theme={duotoneLight} code={props.children.props.children} language="jsx">
                 {({ className, style, tokens, getLineProps, getTokenProps }) => (
                   <pre className={className} style={style}>
-                      {console.log('props----',props)}
                     {tokens.map((line, i) => (
-                      <Line key={i} {...getLineProps({ line, key: i })}>
+                        <Line key={i} {...getLineProps({ line, key: i })}>
                         <LineNo>{i + 1}</LineNo>
                         <LineContent>
                             {line.map((token, key) => (
