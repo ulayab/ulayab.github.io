@@ -23,7 +23,7 @@ export default function Layout({children}) {
                 p: props => <p {...props} style={{ lineHeight: 2 }} />,
                 pre: props => <Highlight {...defaultProps} theme={duotoneLight} code={props.children.props.children} language="jsx">
                 {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                  <pre className={className} style={style}>
+                  <pre className={className} style={{...style, overflow: 'auto'}} >
                     {tokens.map((line, i) => (
                         <Line key={i} {...getLineProps({ line, key: i })}>
                         <LineNo>{i + 1}</LineNo>
@@ -43,10 +43,10 @@ export default function Layout({children}) {
                 <div className="navbar">
                     <Navbar />                
                 </div>
-                <div className="center-content row" style={{marginTop: 30}}>
+                <div className="center-content responsive" style={{marginTop: 30}}>
                     <Profile/>
-                    <div style={{flexBasis: 140}}/>
-                    <div>{children}</div>
+                    <div className="padding"/>
+                    <div className="container">{children}</div>
                 </div>
             </Wrapper>
         </MDXProvider>
@@ -61,6 +61,7 @@ const Wrapper = styled.div`
     --darkGrey: #949ca5;
     --lightGrey: #afafaf;
     --lighterGrey: #cfcfcf;
+    --mobileBreakpoint: 425px;
 
     a {
         color: #6c7a88;
@@ -75,9 +76,33 @@ const Wrapper = styled.div`
         margin: 0 auto;
     }
 
+    & .container {
+        @media only screen and (max-width: 425px) {
+            padding: 20px;
+        } 
+    }
+
+    & .padding {
+        flex-basis: 140px;
+        @media only screen and (max-width: 425px) {
+            flex-basis: 40px;
+        }  
+    }
+
     & .row {
         display: flex;
         /* align-items: center; */
+    }
+
+    & .column {
+        display: flex;
+        flex-direction: column;
+    }
+    & .responsive {
+        display: flex;
+        @media only screen and (max-width: 425px) {
+            flex-direction: column;
+        }
     }
 
     & .navbar {
