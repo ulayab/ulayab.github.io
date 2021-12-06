@@ -70,7 +70,7 @@ const Wrapper = styled.div`
         margin: 0px;
     }
 
-    & > .center-content {
+    & .center-content {
         max-width: var(--contentMaxWidth);
         margin: 0 auto;
     }
@@ -80,6 +80,9 @@ const Wrapper = styled.div`
         /* align-items: center; */
     }
 
+    & .navbar {
+       padding-top: var(--navbarHeight);
+    }
     & .post-item {
         margin-bottom: 50px;
     }
