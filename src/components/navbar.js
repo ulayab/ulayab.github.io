@@ -26,7 +26,7 @@ export default function Navbar() {
                 <div className="padding" />
                 <NavItem to="/">Blog</NavItem>
                 <NavItem to="/about">About</NavItem>
-                <NavItem to="/contact">Contact</NavItem>
+                {/* <NavItem to="/contact">Contact</NavItem> */}
             </div>
         </Wrapper>
     )
@@ -49,6 +49,9 @@ const Wrapper = styled.div`
         align-items: center;
         display: flex;
         flex: 1;
+    }
+    @media only screen and (max-width: 425px) {
+        padding: 5px 10px;
     }
 `
 
