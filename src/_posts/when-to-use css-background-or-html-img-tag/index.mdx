@@ -1,0 +1,52 @@
+---
+title: "When to use css background or html img tag"
+date: "2021-04-01"
+tags: ["css"]
+---
+
+There are two ways to set a image in css,
+
+1. background in `<div>` tag
+2. `<img>` tag 
+
+## css background
+
+- it's a shorthand, contains:
+    - [background-attachment](https://developer.mozilla.org/en-US/docs/Web/CSS/background-attachment)
+    - [background-clip](https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip)
+    - [background-color](https://developer.mozilla.org/en-US/docs/Web/CSS/background-color)
+    - [background-image](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image)
+    - [background-origin](https://developer.mozilla.org/en-US/docs/Web/CSS/background-origin)
+    - [background-position](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position)
+    - [background-repeat](https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat)
+    - [background-size](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)
+- mostly used
+    
+    ```css
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../../images/readmore.png");
+    ```
+    
+
+## html `<img>`
+
+- attributes: (common)
+    - alt: display this string when image broken / for SEO
+    - src: the source of the image (url)
+    - width: px
+    - height: px
+    
+
+## When to use
+
+- `<img>`: When the image is an important data for your content.
+- background: When the image is a decoration in your UI.
+
+## Sources
+
+- [https://developer.mozilla.org/en-US/docs/Web/CSS/background](https://developer.mozilla.org/en-US/docs/Web/CSS/background)
+- [https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)
