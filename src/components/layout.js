@@ -77,6 +77,7 @@ const Wrapper = styled.div`
     }
 
     & .container {
+        overflow: scroll;
         @media only screen and (max-width: 425px) {
             padding: 20px;
         } 
