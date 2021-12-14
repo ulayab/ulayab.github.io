@@ -1,0 +1,124 @@
+---
+title: "Hoisting in JavaScript"
+date: "2021-05-18"
+tags: ["javascript"]
+---
+
+In JS, hoisting allows function, variables and classes be referenced before declared.
+
+for example,
+
+```jsx
+myName("Amy");
+
+function myName(name) {
+  console.log("My name is " + name);
+}
+
+// My name is Amy
+```
+
+- Declaration & Initialization
+    - Hoisting of  `var`
+        - `var` declaration is be hoisted, but  initialization isn't !
+        - The initial value of var is `undefined` .
+        - see the example from [mdn](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
+        
+        ```jsx
+        console.log(num); // Returns 'undefined' from hoisted var declaration (not 6)
+        var num; // Declaration
+        num = 6; // Initialization
+        console.log(num); // Returns 6 after the line with initialization is executed.
+        ```
+        
+        ```jsx
+        console.log(num); // Returns 'undefined' from hoisted var declaration (not 6)
+        var num = 6; // Initialization and declaration.
+        console.log(num); // Returns 6 after the line with initialization is executed. 
+        ```
+        
+        ```jsx
+        console.log(num); // Throws ReferenceError exception - the interpreter doesn't know about `num`.
+        num = 6; // Initialization
+        ```
+        
+        If we doesn't declare `num` , it won't be hoisted.
+        
+    - Hoisting of `let` and `const`
+        - There is hoisting action in let and const variable.
+        - Unlike var, there's no default value of let and const hoisting.
+        
+        ```jsx
+        console.log(a) // ReferenceError: Cannot access 'a' before initialization                                                                    
+        let a = 10
+        ```
+        
+        - [Temporal dead zone (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#temporal_dead_zone_tdz)
+            - The TDZ start at the beginning of the scope.
+            - The TDZ end at the `let` variable is fully initialized.
+            - example 1
+                
+                ```jsx
+                // (O)
+                // TDZ starts at beginning of scope
+                const func = () => console.log(letVar); // OK
+                
+                let letVar = 3; // End of TDZ (for letVar)
+                func(); // Called outside TDZ!
+                
+                // returns 3
+                ```
+                
+                the `func` is called in TDZ 
+                
+                ```jsx
+                // (X) Exception !!!
+                // TDZ starts at beginning of scope
+                const func = () => console.log(letVar); // OK
+                
+                // Within the TDZ letVar access throws `ReferenceError`
+                func(); // <--------- the function is called in TDZ 
+                let letVar = 3; // End of TDZ (for letVar)
+                
+                // Cannot access 'letVar' before initialization
+                ```
+                
+            - example 2
+                
+                `foo` is be called in TDZ
+                
+                ```jsx
+                // (X) Exception !!! 
+                // TDZ starts at beginning of scope
+                  console.log(bar); // undefined
+                  console.log(foo); // ReferenceError
+                  var bar = 1;
+                  let foo = 2; // End of TDZ (for foo)
+                
+                // Cannot access 'foo' before initialization
+                ```
+                
+            - example 3
+                
+                `a` is be hoist in the `test` function scope
+                
+                (is be called in TDZ)
+                
+                ```jsx
+                // (X) Exception !!! 
+                
+                var a = 10
+                function test(){
+                  console.log(a)
+                  let a
+                }
+                test()
+                
+                // Cannot access 'a' before initialization
+                ```
+                
+
+### Sources
+
+- [https://developer.mozilla.org/en-US/docs/Glossary/Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
+- [https://blog.techbridge.cc/2018/11/10/javascript-hoisting/](https://blog.techbridge.cc/2018/11/10/javascript-hoisting/) (can see the info about JS `interpreter` and `compiler` down bellow the article)
