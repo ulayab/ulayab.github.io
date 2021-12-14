@@ -6,7 +6,7 @@ import { faUserCircle, faAt, faMapMarkerAlt, faLink, faAddressCard, faRss } from
 import { faFacebook, faInstagram, faLinkedin, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 let config = {
-	comment: 'Frontend Developer',
+	comment: "A Frontend Developer's notebook, working on more friendly feature here. 🚧",
 	name: 'Ula Chao',
 	company: '',
 	location: 'Taiwan',
